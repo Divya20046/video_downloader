@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Download Video</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background: #f0f4f8;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 80px;
+            }
+    
+            h2 {
+                color: #333;
+            }
+    
+            form {
+                background: white;
+                padding: 20px 30px;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            }
+    
+            input[type="text"] {
+                width: 300px;
+                padding: 10px;
+                margin-right: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+    
+            button {
+                background-color: #28a745;
+                color: white;
+                border: none;
+                padding: 10px 20px;
+                font-size: 16px;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+    
+            button:hover {
+                background-color: #218838;
+            }
+    
+            p {
+                color: #155724;
+                background-color: #d4edda;
+                padding: 10px 20px;
+                border-radius: 5px;
+                margin-top: 20px;
+            }
+    
+            a {
+                display: inline-block;
+                margin-top: 10px;
+                text-decoration: none;
+                color: #007bff;
+            }
+    
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    
+<body>
+    <h2>Paste YouTube or Instagram video link:</h2>
+    <form method="POST">
+        <input type="text" name="url" placeholder="Enter video URL" size="50" required> <br><br>
+        <center><button type="submit">Download</button><center>
+    </form>
+    {% if download_url %}
+        <p>✅ Video downloaded!</p>
+        <a href="{{ download_url }}">Download Video File</a>
+    {% endif %}
+</body>
+</html>
